@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2-dars</title>
+    <link
+      rel="stylesheet"
+      href="./bootstrap-5.2.2-dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero__title text-center">Movies catalog</h1>
+        <div class="row">
+          <div class="col-4 pe-5">
+            <form
+              action="https://echo.htmlacademy.ru/"
+              method="POST"
+              autocomplete="off"
+            >
+              <input
+                class="form-control py-2 mt-3"
+                type="text"
+                name="user-text"
+                aria-activedescendant="User-text"
+                placeholder="Text"
+                required
+              />
+              <input
+                class="form-control py-2 mt-3"
+                type="number"
+                name="movie-number"
+                aria-activedescendant="movie-number"
+                placeholder="Movie number"
+                required
+              />
+              <select class="form-select mt-3" name="all-movies">
+                <option selected disabled>All</option>
+                <option value="1">Avengers-1</option>
+                <option value="2">Avengers-infinity-war</option>
+                <option value="3">Captain-America</option>
+              </select>
+              <select class="form-select mt-3" name="rating">
+                <option selected disabled>Rating (high to low)</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="3">4</option>
+                <option value="3">5</option>
+                <option value="3">6</option>
+                <option value="3">7</option>
+                <option value="3">8</option>
+                <option value="3">9</option>
+                <option value="3">10</option>
+              </select>
+              <button class="btn btn-primary mt-3" type="submit">Search</button>
+            </form>
+            <div class="mt-4">
+              <h2>Bookmarked movies</h2>
+              <ol class="list-group list-group-flush border rounded w-100">
+                <li class="list-group-item pb-3">
+                  <strong> Avengers: infinity War </strong>
+                  <button class="btn btn-danger d-block mt-2" type="reset">
+                    Remove
+                  </button>
+                </li>
+                <li class="list-group-item pb-3">
+                  <strong> The Avengers </strong>
+                  <button class="btn btn-danger d-block mt-2" type="reset">
+                    Remove
+                  </button>
+                </li>
+                <li class="list-group-item pb-3">
+                  <strong> 12 Years a Slave </strong>
+                  <button class="btn btn-danger d-block mt-2" type="reset">
+                    Remove
+                  </button>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div class="col-8 pt-3">
+            <h2>Search results: 39</h2>
+            <div class="alert alert-info fs-4" role="alert">
+              Use the from on the left to search for a movie
+            </div>
+            <div class="d-flex">
+              <div class="w-50 pe-3">
+                <div class="card w-100 pb-2" style="width: 18rem">
+                  <div
+                    id="carouselExampleControls"
+                    class="carousel slide"
+                    data-bs-ride="carousel"
+                  >
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img
+                          src="./images/card-1-1.jpg"
+                          class="d-block w-100"
+                          alt="Avengers"
+                          height="250"
+                        />
+                      </div>
+                      <div class="carousel-item">
+                        <img
+                          src="./images/card-1-2.jpg"
+                          class="d-block w-100"
+                          alt="Avengers"
+                          height="250"
+                        />
+                      </div>
+                      <div class="carousel-item">
+                        <img
+                          src="./images/card-1-3.webp"
+                          class="d-block w-100"
+                          alt="Avengers"
+                          height="250"
+                        />
+                      </div>
+                    </div>
+                    <button
+                      class="carousel-control-prev"
+                      type="button"
+                      data-bs-target="#carouselExampleControls"
+                      data-bs-slide="prev"
+                    >
+                      <span
+                        class="carousel-control-prev-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button
+                      class="carousel-control-next"
+                      type="button"
+                      data-bs-target="#carouselExampleControls"
+                      data-bs-slide="next"
+                    >
+                      <span
+                        class="carousel-control-next-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                  <div class="card-body">
+                    <h3 class="card-title h5 mb-3">Avengers: infinity War</h3>
+                    <div class="d-flex">
+                      <img
+                        src="./images/calendar.svg"
+                        alt="Calendar icon"
+                        width="24"
+                        height="24"
+                      />
+                      <time class="ms-2" datetime="2018-01-01">2018</time>
+                    </div>
+                    <div class="d-flex my-3">
+                      <img
+                        src="./images/star.svg"
+                        alt="Star icon"
+                        width="24"
+                        height="24"
+                      />
+                      <span class="ms-2">8.7</span>
+                    </div>
+                    <div class="w-100 d-flex flex-row justify-content-around">
+                      <a href="#" class="btn btn-outline-primary"
+                        >Watch trailer</a
+                      >
+                      <!-- Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-outline-info"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                      >
+                        More info
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="exampleModal"
+                        tabindex="-1"
+                        aria-labelledby="exampleModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title fs-5"
+                                id="exampleModalLabel"
+                              >
+                                Avengers info
+                              </h1>
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              <p>
+                                "Marvel's The Avengers" redirects here. For the
+                                original comic book characters, see Avengers
+                                (comics). For other uses, see Avenger
+                                (disambiguation). The Avengers The Avengers
+                                (2012 film) poster.jpg Theatrical release poster
+                                Directed by Joss Whedon Screenplay by Joss
+                                Whedon Story by Zak Penn Joss Whedon Based on
+                                Avengers by Stan Lee Jack Kirby Produced by
+                                Kevin Feige Starring Robert Downey Jr. Chris
+                                Evans Mark Ruffalo Chris Hemsworth Scarlett
+                                Johansson Jeremy Renner Tom Hiddleston Clark
+                                Gregg Cobie Smulders Stellan Skarsgård Samuel L.
+                                Jackson Cinematography Seamus McGarvey Edited by
+                                Jeffrey Ford Lisa Lassek Music by Alan Silvestri
+                                Production company Marvel Studios Distributed by
+                                Walt Disney Studios Motion Pictures[N 1] Release
+                                dates April 11, 2012 (El Capitan Theatre) May 4,
+                                2012 (United States) Running time 143 minutes[1]
+                                Country United States Language English Budget
+                                $220 million[2] Box office $1.519 billion[3]
+                                Marvel's The Avengers[4] (classified under the
+                                name Marvel Avengers Assemble in the United
+                                Kingdom and Ireland),[1][5] or simply The
+                                Avengers, is a 2012 American superhero film
+                                based on the Marvel Comics superhero team of the
+                                same name.
+                              </p>
+                            </div>
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Close
+                              </button>
+                              <button type="button" class="btn btn-primary">
+                                Save changes
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <a href="#" class="btn btn-outline-success">Bookmark</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-50 ps-3">
+                <div class="card w-100 pb-2" style="width: 18rem">
+                  <div
+                    id="carouselExampleControlstwo"
+                    class="carousel slide"
+                    data-bs-ride="carousel"
+                  >
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img
+                          src="./images/card-2-1.jpg"
+                          class="d-block w-100"
+                          alt="Avengers"
+                          height="250"
+                        />
+                      </div>
+                      <div class="carousel-item">
+                        <img
+                          src="./images/card-2-2.jpg"
+                          class="d-block w-100"
+                          alt="Avengers"
+                          height="250"
+                        />
+                      </div>
+                      <div class="carousel-item">
+                        <img
+                          src="./images/card-2-3.jpg"
+                          class="d-block w-100"
+                          alt="Avengers"
+                          height="250"
+                        />
+                      </div>
+                    </div>
+                    <button
+                      class="carousel-control-prev"
+                      type="button"
+                      data-bs-target="#carouselExampleControlstwo"
+                      data-bs-slide="prev"
+                    >
+                      <span
+                        class="carousel-control-prev-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button
+                      class="carousel-control-next"
+                      type="button"
+                      data-bs-target="#carouselExampleControlstwo"
+                      data-bs-slide="next"
+                    >
+                      <span
+                        class="carousel-control-next-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                  <div class="card-body">
+                    <h3 class="card-title h5 mb-3">The Avengers</h3>
+                    <div class="d-flex">
+                      <img
+                        src="./images/calendar.svg"
+                        alt="Calendar icon"
+                        width="24"
+                        height="24"
+                      />
+                      <time class="ms-2" datetime="2018-01-01">2012</time>
+                    </div>
+                    <div class="d-flex my-3">
+                      <img
+                        src="./images/star.svg"
+                        alt="Star icon"
+                        width="24"
+                        height="24"
+                      />
+                      <span class="ms-2">8.1</span>
+                    </div>
+                    <div class="w-100 d-flex flex-row justify-content-around">
+                      <a href="#" class="btn btn-outline-primary"
+                        >Watch trailer</a
+                      >
+                      <!-- Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-outline-info"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                      >
+                        More info
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="exampleModal"
+                        tabindex="-1"
+                        aria-labelledby="exampleModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title fs-5"
+                                id="exampleModalLabel"
+                              >
+                                Avengers info
+                              </h1>
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              <p>
+                                "Marvel's The Avengers" redirects here. For the
+                                original comic book characters, see Avengers
+                                (comics). For other uses, see Avenger
+                                (disambiguation). The Avengers The Avengers
+                                (2012 film) poster.jpg Theatrical release poster
+                                Directed by Joss Whedon Screenplay by Joss
+                                Whedon Story by Zak Penn Joss Whedon Based on
+                                Avengers by Stan Lee Jack Kirby Produced by
+                                Kevin Feige Starring Robert Downey Jr. Chris
+                                Evans Mark Ruffalo Chris Hemsworth Scarlett
+                                Johansson Jeremy Renner Tom Hiddleston Clark
+                                Gregg Cobie Smulders Stellan Skarsgård Samuel L.
+                                Jackson Cinematography Seamus McGarvey Edited by
+                                Jeffrey Ford Lisa Lassek Music by Alan Silvestri
+                                Production company Marvel Studios Distributed by
+                                Walt Disney Studios Motion Pictures[N 1] Release
+                                dates April 11, 2012 (El Capitan Theatre) May 4,
+                                2012 (United States) Running time 143 minutes[1]
+                                Country United States Language English Budget
+                                $220 million[2] Box office $1.519 billion[3]
+                                Marvel's The Avengers[4] (classified under the
+                                name Marvel Avengers Assemble in the United
+                                Kingdom and Ireland),[1][5] or simply The
+                                Avengers, is a 2012 American superhero film
+                                based on the Marvel Comics superhero team of the
+                                same name.
+                              </p>
+                            </div>
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Close
+                              </button>
+                              <button type="button" class="btn btn-primary">
+                                Save changes
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <a href="#" class="btn btn-outline-success">Bookmark</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="btn-group mt-5 d-flex col-2 mx-auto"
+              role="group"
+              aria-label="Basic radio toggle button group"
+            >
+              <input
+                type="radio"
+                class="btn-check"
+                name="btnradio"
+                id="btnradio1"
+                autocomplete="off"
+                checked
+              />
+              <label class="btn btn-outline-primary" for="btnradio1"
+                >1</label
+              >
+
+              <input
+                type="radio"
+                class="btn-check"
+                name="btnradio"
+                id="btnradio2"
+                autocomplete="off"
+              />
+              <label class="btn btn-outline-primary" for="btnradio2"
+                >2</label
+              >
+
+              <input
+                type="radio"
+                class="btn-check"
+                name="btnradio"
+                id="btnradio3"
+                autocomplete="off"
+              />
+              <label class="btn btn-outline-primary" for="btnradio3"
+                >3</label
+              >
+
+              <input
+                type="radio"
+                class="btn-check"
+                name="btnradio"
+                id="btnradio4"
+                autocomplete="off"
+              />
+              <label class="btn btn-outline-primary" for="btnradio4"
+                >4</label
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="./bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
